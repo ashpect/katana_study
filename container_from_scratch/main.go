@@ -2,7 +2,12 @@ package main
 
 import (
 	"fmt"
+	//"io/ioutil"
 	"os"
+	"os/exec"
+	//"path/filepath"
+	//"strconv"
+	"syscall"
 )
 
 //docker run image <cmd> <params>
@@ -20,6 +25,14 @@ func main(){
 
 func run(){
 	fmt.Printf("Running %v\n", os.Args[2:])
+	cmd := exec.Command(os.Args[2],os.Args[3:]...)
+	cmd.Stdin = os.Stdin
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.SysProcAttr = &syscall.SysProcAttr{
+		Cloneflags:   syscall.CLONE_NEWUTS,
+	}
+	cmd.Run()
 }
 
 func must(err error){
