@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ubuntu-shell-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ubuntu-shell
+  template:
+    metadata:
+      labels:
+        app: ubuntu-shell
+    spec:
+      containers:
+        - name: ubuntu-shell
+          image: ubuntu-shell
+          command: ["bash"]
