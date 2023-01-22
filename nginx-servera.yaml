@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: basicpoda
+  namespace: teama
+  labels:
+    name: basicpoda
+spec:
+  containers:
+    - name: basicpoda
+      image: nginx

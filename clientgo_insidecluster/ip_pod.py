@@ -3,7 +3,8 @@
 from kubernetes import client, config
 
 #loads cubeconfig file in .cube directory
-config.load_incluster_config()
+config.load_kube_config()
+#config.load_incluster_config()
 
 #core v1 api to list npods for all namespaces
 v1 = client.CoreV1Api()

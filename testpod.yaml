@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testtest
+  namespace: default
+spec:
+  containers:
+    - name: testitout
+      image: nginx:latest
+      imagePullPolicy: Never
+  restartPolicy: Never

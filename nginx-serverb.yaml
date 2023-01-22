@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: basicpodb
+  namespace: teamb
+  labels:
+    name: basicpodb
+spec:
+  containers:
+    - name: basicpodb
+      image: nginx

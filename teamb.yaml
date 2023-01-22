@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: teamb
+  labels:
+    name: teamb
+kubectl get deployment -n=development
