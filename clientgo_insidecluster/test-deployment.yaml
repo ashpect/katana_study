@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testubuntuserver
+  labels:
+    app: testubuntu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testubuntu
+  template:
+    metadata:
+      labels:
+        app: testubuntu
+    spec:
+      containers:
+        - name: testubuntu
+          image: ubuntu:latest
